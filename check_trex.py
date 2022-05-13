@@ -135,7 +135,7 @@ def setup_logging(args):
 
 
 def show_version():
-    print("1.0.0")
+    print("1.0.1")
 
 
 class BelowThresholdContext(Context):
