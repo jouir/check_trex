@@ -24,6 +24,14 @@ sudo apt-get install python3-nagiosplugin python3-requests
 ./check_trex --help
 ```
 
+# Examples
+
+Nagios NRPE:
+
+```
+command[check_trex]=/opt/check_trex/check_trex.py --hashrate-warning 60000000 --hashrate-critical 50000000 --uptime-critical 300 --uptime-warning 600
+```
+
 # Contributing
 
 ```
