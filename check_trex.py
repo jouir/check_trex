@@ -5,8 +5,15 @@ import logging
 import sys
 
 import requests
-from nagiosplugin import (Check, Context, Metric, Performance, Resource,
-                          ScalarContext, Summary)
+from nagiosplugin import (
+    Check,
+    Context,
+    Metric,
+    Performance,
+    Resource,
+    ScalarContext,
+    Summary,
+)
 from nagiosplugin.state import Critical, Ok, Unknown, Warn
 
 logger = logging.getLogger(__name__)
@@ -288,6 +295,11 @@ def main():
                 "temperature",
                 warning=args.temperature_warning,
                 critical=args.temperature_critical,
+            ),
+            ScalarContext(
+                "memory_temperature",
+                warning=args.memory_temperature_warning,
+                critical=args.memory_temperature_critical,
             ),
             TrexSummary(),
         )
