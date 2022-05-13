@@ -1,6 +1,6 @@
 # check_trex
 
-Nagios check for T-Rex miner.
+Nagios check for [T-Rex miner](https://github.com/trexminer/T-Rex).
 
 # Installation
 
