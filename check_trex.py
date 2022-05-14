@@ -239,7 +239,7 @@ class Trex(Resource):
                 )
 
             if "memory_temperature" in gpu:
-                temperature = gpu["memory_temperature"]
+                memory_temperature = gpu["memory_temperature"]
                 logger.debug(
                     f"Memory temperature of {name} ({id}) is {memory_temperature}C"
                 )
