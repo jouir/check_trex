@@ -21,7 +21,7 @@ sudo apt-get install python3-nagiosplugin python3-requests
 # Usage
 
 ```
-./check_trex --help
+./check_trex.py --help
 ```
 
 # Examples
