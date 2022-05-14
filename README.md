@@ -2,6 +2,22 @@
 
 Nagios check for [T-Rex miner](https://github.com/trexminer/T-Rex).
 
+# Security
+
+T-Rex API must be opened in a secured way:
+* `--api-read-only`: accessible only in read-only, no modification
+* `--api-bind-http 127.0.0.1:4067`: (default) accessible only to local connections
+
+If the check is executed **remotely**, you should add a **firewall rule** to allow only the host running the check to
+access the T-Rex API port.
+
+**HTTPS** should be used:
+* `--api-https`
+* `--api-webserver-cert`
+* `--api-webserver-pkey`
+
+See full [list of options](https://github.com/trexminer/T-Rex#usage).
+
 # Installation
 
 Using pip:
