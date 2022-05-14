@@ -202,29 +202,29 @@ class Trex(Resource):
 
         if "hashrate" in data:
             hashrate = data["hashrate"]
-            logger.debug(f"Hashrate is {hashrate}")
+            logger.info(f"Hashrate is {hashrate}")
             metrics.append(Metric("hashrate", hashrate, context="hashrate"))
 
         if "success" in data:
             success = bool(data["success"])
             if success:
-                logger.debug("T-Rex is successfully started")
+                logger.info("T-Rex is successfully started")
             else:
-                logger.debug("T-Rex is not successfully started")
+                logger.info("T-Rex is not successfully started")
             metrics.append(Metric("success", success, context="success"))
 
         if "paused" in data:
             paused = bool(data["paused"])
             if paused:
-                logger.debug("T-Rex is paused")
+                logger.info("T-Rex is paused")
             else:
-                logger.debug("T-Rex is not paused")
+                logger.info("T-Rex is not paused")
             metrics.append(Metric("paused", paused, context="paused"))
 
         if "uptime" in data:
             uptime = data["uptime"]
             seconds = "seconds" if uptime > 1 else "second"
-            logger.debug(f"Uptime is {uptime} {seconds}")
+            logger.info(f"Uptime is {uptime} {seconds}")
             metrics.append(Metric("uptime", uptime, context="uptime"))
 
         for gpu in data.get("gpus"):
@@ -233,15 +233,15 @@ class Trex(Resource):
 
             if "temperature" in gpu:
                 temperature = gpu["temperature"]
-                logger.debug(f"Temperature of {name} ({id}) is {temperature}C")
+                logger.info(f"GPU {id} ({name}): temperature is {temperature}C")
                 metrics.append(
                     Metric(f"temperature_{id}", temperature, context="temperature")
                 )
 
             if "memory_temperature" in gpu:
                 memory_temperature = gpu["memory_temperature"]
-                logger.debug(
-                    f"Memory temperature of {name} ({id}) is {memory_temperature}C"
+                logger.info(
+                    f"GPU {id} ({name}): memory temperature is {memory_temperature}C"
                 )
                 metrics.append(
                     Metric(
