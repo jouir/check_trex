@@ -235,7 +235,7 @@ class Trex(Resource):
                 temperature = gpu["temperature"]
                 logger.debug(f"Temperature of {name} ({id}) is {temperature}C")
                 metrics.append(
-                    Metric("temperature", temperature, context="temperature")
+                    Metric(f"temperature_{id}", temperature, context="temperature")
                 )
 
             if "memory_temperature" in gpu:
@@ -245,7 +245,7 @@ class Trex(Resource):
                 )
                 metrics.append(
                     Metric(
-                        "memory_temperature",
+                        f"memory_temperature_{id}",
                         memory_temperature,
                         context="memory_temperature",
                     )
